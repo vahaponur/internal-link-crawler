@@ -1,0 +1,31 @@
+{
+  "name": "webcrawlerjs",
+  "version": "0.0.1",
+  "description": "crawl links included in a website",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vahaponur/webcrawlerjs.git"
+  },
+  "keywords": [
+    "crawler",
+    "webcrawler",
+    "scraper"
+  ],
+  "author": "Vahap Onur YILDIRIM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vahaponur/webcrawlerjs/issues"
+  },
+  "homepage": "https://github.com/vahaponur/webcrawlerjs#readme",
+  "devDependencies": {
+    "jest": "^29.6.2"
+  },
+  "dependencies": {
+    "jsdom": "^22.1.0"
+  }
+}
