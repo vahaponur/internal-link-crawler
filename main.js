@@ -8,7 +8,7 @@ async function main(){
         return
     }
     console.log(`Starting to crawl at: ${argv[2]}`)
-    await crawlPage(argv[2],null,null)
+    console.log(await crawlPage(argv[2],argv[2],{}))
 }
 
 main()
