@@ -70,7 +70,16 @@ else{
 let webpageResponse = null
 try {
  webpageResponse = await fetch(currentUrl)
+const contentType = await webpageResponse.headers.get('content-type')
+if(!contentType.includes('html'))
+return
+const bodyHtml = await webpageResponse.text()
+const urlsOnThePage=getURLsFromHTML(bodyHtml,baseURL)
 
+urlsOnThePage.forEach(element => {
+    crawlPage(baseURL,element,pages)
+});
+return pages
 } catch (error) {
     if(webpageResponse !== null && webpageResponse.status !== 200){
 
@@ -81,13 +90,7 @@ try {
     return
 }
 
-const bodyHtml = await webpageResponse.text()
-const urlsOnThePage=getURLsFromHTML(bodyHtml,baseURL)
 
-urlsOnThePage.forEach(element => {
-    crawlPage(baseURL,element,pages)
-});
-return pages
 
 
 
