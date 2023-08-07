@@ -1,4 +1,5 @@
 const { crawlPage } = require("./crawl");
+const { printReport } = require("./report");
 
 const argv = process.argv;
 
@@ -8,7 +9,8 @@ async function main(){
         return
     }
     console.log(`Starting to crawl at: ${argv[2]}`)
-    console.log(await crawlPage(argv[2],argv[2],{}))
+    const pages = await crawlPage(argv[2],argv[2],{})
+    printReport(pages)
 }
 
 main()
