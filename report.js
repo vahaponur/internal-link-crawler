@@ -41,6 +41,6 @@ const partition = (kvArr, start, end) => {
     return i;
 };
 
-module.exports={
+module.exports = {
     printReport
 }
